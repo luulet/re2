@@ -7,12 +7,12 @@ class Auto:
         self.matka = matka
 
 
-def main(self, kerrat):
+def main():
     auto1 = Auto("ABC-123","142 km/h", 0, 0)
-    for i in range(kerrat):
-        print(str(self.rekisteritunnus), str(self.huippunopeus), str(self.nopeus), str(self.matka))
 
-
+    print("Auton ominaisuudet:")
+    print(f'{auto1.rekisteritunnus}, {auto1.huippunopeus}, {auto1.nopeus}, {auto1.matka}')
     return
-auto1 = "0"
-main(auto1, 1)
+
+main()
+
