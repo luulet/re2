@@ -17,7 +17,6 @@ def main():
             elif self.nopeus <= 0:
                     self.nopeus = 0
 
-
         def kulje(self, time):
             self.matka += time * self.nopeus
 
@@ -35,6 +34,7 @@ def main():
             if kilpa_auto.matka >= 10000:
                 print(f'Auto {kilpa_auto.rekisteritunnus} pääsi maaliin!')
                 flag = False
+    autot.sort(key=lambda a: a.matka, reverse=True)
     taulukko = f"""x-------------------------------------------------------------x
 | Rekkari | Huippunopeus | Lopullinen nopeus | Kuljettu matka |"""
     taulukko2 = f"x-------------------------------------------------------------x"
