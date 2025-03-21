@@ -33,8 +33,11 @@ def main():
             self.low = low
             self.hissit = []
         def luonti(self, hissikpl):
-            for i in hissikpl:
-                self.hissit.append(str(i))
+            for i in range(hissikpl):
+                self.hissit.append(i+1)
+        def aja(self):
+            
+
     t = Talo(5,10,1)
     t.luonti(t.hissikpl)
     print(t.hissit)
