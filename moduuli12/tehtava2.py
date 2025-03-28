@@ -8,7 +8,6 @@ def weather(api_key, q):
         "q": q,
         "appid": api_key,
         "units": "metric"
-        "lan": "fin"
     }
     search = requests.get(base, params=params)
     return search.json()
@@ -20,9 +19,7 @@ def main():
 
     data = weather(api_key, q)
 
-    print(json.dumps(data, indent=2))
-
-    print(data["main"]["temp"])
-    print(data["weather"][0]["description"])
+    print(f'Lämpötila: {data["main"]["temp"]} °C')
+    print(f'Sääolosuhde on: {data["weather"][0]["main"]}')
 
 main()
