@@ -36,7 +36,7 @@ def main():
             for i in range(hissikpl):
                 self.hissit.append(i+1)
         def aja(self):
-            
+
 
     t = Talo(5,10,1)
     t.luonti(t.hissikpl)
