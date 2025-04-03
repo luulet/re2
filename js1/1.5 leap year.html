@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>leap year</title>
+  </head>
+  <body>
+    <p id="output" ></p>
+      <script>
+        'use strict';
+
+        const year = parseInt(prompt('Enter a year to see whether the input year is a leap year.'))
+        if (year % 4 == 0) {
+          if (year % 100 == 0) {
+            if (year % 400 == 0) {
+              document.getElementById('output').innerHTML = year + ' is a leap year.'
+            } else {
+              document.getElementById('output').innerHTML = year + ' is not a leap year.'
+            }
+          }
+          else {document.getElementById('output').innerHTML = year + ' is a leap year.'}
+
+        }
+        else {document.getElementById('output').innerHTML = year + ' is not a leap year.'}
+
+
+
+
+
+
+      </script>
+
+  </body>
+</html>
