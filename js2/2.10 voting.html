@@ -2,11 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>voting</title>
-  <script>
+  <title>Voting</title>
+</head>
+<body>
 
-  </script>
+<script>
+function createCandidates(numCandidates) {
+  let candidates = [];
+
+  for (let i = 1; i <= numCandidates; i++) {
+    let candidateName = prompt(`Name for candidate ${i}:`);
+    candidates.push({ name: candidateName, votes: 0 });
+  }
+  return candidates;
+}
+function voting(candidates, numVoters) {
+  for (let i = 1; i <= numVoters; i++) {
+    let vote = prompt(`Voter ${i}, enter the name of the candidate you vote for (or press Enter for no vote):`);
+
+    if (vote !== null) {
+      let candidate = candidates.find(candidate => candidate.name === vote);
+      if (candidate) {
+        candidate.votes++;
+      } else {
+        console.log(`Invalid vote for ${vote}. Candidate not found.`);
+      }
+    } else {
+      console.log(`Voter ${i} has submitted an empty vote.`);
+    }
+  }
+}
+
+function results(candidates) {
+
+  candidates.sort((a, b) => b.votes - a.votes);
+
+  console.log(`The winner is ${candidates[0].name} with ${candidates[0].votes} votes.`);
+  console.log("Results:");
+  candidates.forEach(candidate => {
+    console.log(`${candidate.name}: ${candidate.votes} votes`);
+  });
+}
+
+let numCandidates = parseInt(prompt("Enter the number of candidates:"));
+
+if (!isNaN(numCandidates) && numCandidates > 0) {
+  let candidates = createCandidates(numCandidates);
+
+  let numVoters = parseInt(prompt("Enter the number of voters:"));
+
+  if (!isNaN(numVoters) && numVoters > 0) {
+    voting(candidates, numVoters);
+    results(candidates);
+  } else {
+    console.log("Invalid number of voters.");
+  }
+} else {
+  console.log("Invalid number of candidates.");
+}
+</script>
 
 </body>
 </html>

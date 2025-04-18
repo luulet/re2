@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>reversed numbers</title>
-  </head>
-  <body>
-    <p id="output" ></p>
-      <script>
-        'use strict';
+<head>
+  <meta charset="UTF-8">
+  <title>Reversed numbers</title>
+  <script>
+    function reverse() {
+      var numbers = [];
 
-    function reverseNumbers() {
-        let numbers = [];
+      for (var i = 0; i < 5; i++) {
+        var userInput = prompt("Give number " + (i + 1) + ":");
+        var parsedNumber = parseFloat(userInput);
 
-        for (let i = 0; i < 5; i) {
-            let input = prompt("Enter number " + (i + 1) + ":");
-            let pars = parseFloat(inputnput);
+        if (!isNaN(parsedNumber)) {
+          numbers.push(parsedNumber);
+        } else {
+          alert("Invalid input.");
+          return;
         }
-        let numbers.push(pars);
+      }
+      var reversed = numbers.slice().reverse();
+      console.log("Numbers in reverse:", reversed);
     }
-    let reversedNumbers = numbers.slice().reverse();
-
-    function() {
-      reverseNumbers();
+  </script>
+</head>
+<body>
+  <script>
+    window.onload = function() {
+      reverse();
     };
+  </script>
 
-
-    console.log("Numbers in reversed order:", reversedNumbers);
-      </script>
-
-  </body>
+</body>
 </html>
